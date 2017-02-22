@@ -1,8 +1,12 @@
 package maquina.suco.macho;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class MaquinaSucoMacho {
     
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         /*
             Máquina de Suco de Macho
             
@@ -39,6 +43,12 @@ public class MaquinaSucoMacho {
         int menu = 0;
         boolean adiciona = true;
         
+        BufferedReader leitor = new BufferedReader(new InputStreamReader(System.in));
+        
+        menu = Integer.valueOf(leitor.readLine());
+        
+        System.out.println(menu);
+        
         switch (menu) {
             case 0: // Açucar
                 if (adiciona) {
@@ -64,10 +74,7 @@ public class MaquinaSucoMacho {
                 break;
             default:
                 System.out.println("Selecione valor do 0, 1 ou 2");
-        }
-        
-        System.out.println(tamanhoCopo + doseAgua);
-        
+        }      
         
     }
 }
