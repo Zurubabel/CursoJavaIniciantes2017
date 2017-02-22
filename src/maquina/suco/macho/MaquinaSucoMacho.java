@@ -28,20 +28,45 @@ public class MaquinaSucoMacho {
         
         int tamanhoCopo = 500;
         int doseAcucar = 5;
-        int agua = 50;
-        int suco = 10;
+        int doseAgua = 50;
+        int doseSuco = 10;
+        
+        // Valor atual
+        int acucarAtual = 0;
+        int aguaAtual = 0;
+        int sucoAtual = 0;
         
         int menu = 0;
+        boolean adiciona = true;
         
-        if (menu == 0) { // Açucar
-            
-        } else if (menu == 1) { // Água
-            
-        } else if (menu == 2) { // Suco
-            
+        switch (menu) {
+            case 0: // Açucar
+                if (adiciona) {
+                    acucarAtual += doseAcucar;
+                } else {
+                    acucarAtual -= doseAcucar;
+                }
+                
+                break;
+            case 1: // Água
+                if (adiciona) {
+                    aguaAtual += doseAgua;
+                } else {
+                    aguaAtual -= doseAgua;
+                }
+                break;           
+            case 2: // Suco
+                if (adiciona) {
+                    sucoAtual += doseSuco;
+                } else {
+                    sucoAtual -= doseSuco;
+                }
+                break;
+            default:
+                System.out.println("Selecione valor do 0, 1 ou 2");
         }
         
-        System.out.println(tamanhoCopo + agua);
+        System.out.println(tamanhoCopo + doseAgua);
         
         
     }
