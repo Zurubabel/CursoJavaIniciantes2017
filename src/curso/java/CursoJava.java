@@ -17,8 +17,28 @@ public class CursoJava {
         // < menor
         // <= menor ou igual
         
+        // Operadores Lógicos
+        // && E
+        // || OU
+        // ! Não
         
-        System.out.println(1 >= 1);
+        // Abrir uma porta = Maçaneta E a chave (&&)
+        // Abrir uma porta = Maçaneta OU a chave (||)
+        
+        
+        /*System.out.println(true && true);
+        System.out.println(true && false);
+        System.out.println(false && true);
+        System.out.println(false && false);*/
+        
+        /*System.out.println(true || true);
+        System.out.println(true || false);
+        System.out.println(false || true);
+        System.out.println(false || false);*/
+        
+        System.out.println(!(1 > 2) && true);
+        
+        
         
     }
     
