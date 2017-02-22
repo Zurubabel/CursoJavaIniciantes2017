@@ -3,24 +3,22 @@ package curso.java;
 public class CursoJava {
 
     public static void main(String[] args) {
-        // Variáveis
-        // Tipo nome = valor
         
-        // Variáveis primitivos
-        // Inteiros
-        int inteiro = 10;
-        long longo = 100L;
+        // Operações matemáticas
+        // 1 + 1 = 2
         
-        // Reais
-        float flutuante = 10.0f;
-        double dobro =10.0;
+        // Operações Lógicas
+        // Retorno = true (verdadeiro) ou false (falso)
         
-        long resposta = inteiro + longo;
-        
-        System.out.println(resposta);
+        // == Igualdade
+        // != Diferente
+        // > Maior
+        // >= Maior OU igual
+        // < menor
+        // <= menor ou igual
         
         
-        
+        System.out.println(1 >= 1);
         
     }
     
