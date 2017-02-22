@@ -2,42 +2,29 @@ package curso.java;
 
 public class CursoJava {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
+        int numero = 0;
         
-        // Operações matemáticas
-        // 1 + 1 = 2
+        int resultado = numero % 2; 
         
-        // Operações Lógicas
-        // Retorno = true (verdadeiro) ou false (falso)
+        if (resultado != 1) {
+            System.out.println(numero + " é par");
+        } else {
+            System.out.println(numero + " é ímpar");
+        }
         
-        // == Igualdade
-        // != Diferente
-        // > Maior
-        // >= Maior OU igual
-        // < menor
-        // <= menor ou igual
-        
-        // Operadores Lógicos
-        // && E
-        // || OU
-        // ! Não
-        
-        // Abrir uma porta = Maçaneta E a chave (&&)
-        // Abrir uma porta = Maçaneta OU a chave (||)
-        
-        
-        /*System.out.println(true && true);
-        System.out.println(true && false);
-        System.out.println(false && true);
-        System.out.println(false && false);*/
-        
-        /*System.out.println(true || true);
-        System.out.println(true || false);
-        System.out.println(false || true);
-        System.out.println(false || false);*/
-        
-        System.out.println(!(1 > 2) && true);
-        
+        if (numero == 0 || numero < 100) {
+            if (numero == 0) {
+                System.out.println(numero + " é igual a 0");
+            } else {
+                System.out.println(numero + " é menor que 100");
+            }
+            
+        } else if (numero >= 100 || numero <= 200) {
+            System.out.println(numero + " é maior ou igual a 100 ou menor ou igual a 200");
+        } else {
+            System.out.println(numero + " é maior que 200");
+        }
         
         
     }
