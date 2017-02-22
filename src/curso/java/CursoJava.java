@@ -3,29 +3,46 @@ package curso.java;
 public class CursoJava {
 
     public static void main(String[] args) { 
-        int numero = -50;
         
-        int resultado = numero % 2; 
+        // Cargos
+        // 0 - 3 = Chão de Fábrica
+        // 4 - 6 = Supervisores
+        // 7 = Gerência
+        // 8 = Dono
         
-        if (resultado != 1) {
-            System.out.println(numero + " é par");
-        } else {
-            System.out.println(numero + " é ímpar");
+        int cargo = 250;
+        
+        switch(cargo) {
+            case 0: 
+            case 1:
+            case 2:
+            case 3:
+                System.out.println("Funcionário é chão de fábrica");
+                break;
+            case 4:
+            case 5:
+            case 6:
+                System.out.println("Funcionário é supervisor");
+                break;
+            case 7:
+                System.out.println("Funcionário é gerente");
+                break;
+            case 8:
+                System.out.println("É o chefe, rapá!");
+                break;
+            default:
+                System.out.println("Sei lá");
         }
         
-        if (numero < 0) {
-            System.out.println(numero + " é negativo");
-        } else if (numero >= 0 && numero < 100) {
-            if (numero == 0) {
-                System.out.println(numero + " é igual a 0");
-            } else {
-                System.out.println(numero + " é menor que 100");
-            }
-            
-        } else if (numero >= 100 && numero <= 200) {
-            System.out.println(numero + " é maior ou igual a 100 ou menor ou igual a 200");
-        } else {
-            System.out.println(numero + " é maior que 200");
+        
+        String nomeCargo = "Ch1efe";
+        
+        switch(nomeCargo) {
+            case "Chefe":
+                System.out.println("É o chefe, rapá!");
+                break;
+            default:
+                System.out.println("Sei lá");
         }
         
         
