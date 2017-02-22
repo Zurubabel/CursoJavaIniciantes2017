@@ -16,9 +16,13 @@ public class MaquinaSucoMacho {
         
             Jailson = Gosto
         
+            * Controles do suco
+                - Qual ingrediente
+                - Aumenta ou diminui
+        
             * Gerar o gosto do Jailson aleatoriamente
                 - Retornar o gosto dele
-            * Controles do suco
+            
             * Controlar o volume do copo
         */
         
@@ -26,6 +30,16 @@ public class MaquinaSucoMacho {
         int doseAcucar = 5;
         int agua = 50;
         int suco = 10;
+        
+        int menu = 0;
+        
+        if (menu == 0) { // Açucar
+            
+        } else if (menu == 1) { // Água
+            
+        } else if (menu == 2) { // Suco
+            
+        }
         
         System.out.println(tamanhoCopo + agua);
         
