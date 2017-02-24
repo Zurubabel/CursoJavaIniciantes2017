@@ -53,12 +53,9 @@ public class MaquinaSucoMacho {
         System.out.printf("* ÁGUA:    %dml             *\n", aguaAtual);
         System.out.printf("* SUCO:    %dml             *\n", sucoAtual);
         System.out.printf("* TOTAL:   %dml/%dml       *\n", volumeTotal, tamanhoCopo);
-        System.out.println("****************************");
-        System.out.println("* SELECIONE O INGREDIENTE  *");
-        System.out.println("* 0 = Açucar               *");
-        System.out.println("* 1 = Água                 *");
-        System.out.println("* 2 = Suco                 *");
-        System.out.println("****************************");
+        
+        exibirMenuIngredientes();
+        
         menu = leitor.nextInt();
         
         
@@ -90,6 +87,15 @@ public class MaquinaSucoMacho {
             default:
                 System.out.println("Selecione valor do 0, 1 ou 2");
         }      
-        
     }
+    
+    static void exibirMenuIngredientes() {
+        System.out.println("****************************");
+        System.out.println("* SELECIONE O INGREDIENTE  *");
+        System.out.println("* 0 = Açucar               *");
+        System.out.println("* 1 = Água                 *");
+        System.out.println("* 2 = Suco                 *");
+        System.out.println("****************************");
+    }
+    
 }
