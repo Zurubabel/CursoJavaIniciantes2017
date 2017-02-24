@@ -28,6 +28,8 @@ public class MaquinaSucoMacho {
             * Controlar o volume do copo
         */
         
+        Scanner leitor = new Scanner(System.in);
+        
         int tamanhoCopo = 500;
         int doseAcucar = 5;
         int doseAgua = 50;
@@ -52,17 +54,15 @@ public class MaquinaSucoMacho {
         System.out.printf("* SUCO:    %dml             *\n", sucoAtual);
         System.out.printf("* TOTAL:   %dml/%dml       *\n", volumeTotal, tamanhoCopo);
         System.out.println("****************************");
-        
-        
-        // Quantidade do copo
-        // Quanto de açucar
-        // Suco
-        
-        Scanner leitor = new Scanner(System.in);
-        
+        System.out.println("* SELECIONE O INGREDIENTE  *");
+        System.out.println("* 0 = Açucar               *");
+        System.out.println("* 1 = Água                 *");
+        System.out.println("* 2 = Suco                 *");
+        System.out.println("****************************");
         menu = leitor.nextInt();
         
-        System.out.println("Número lido: " + menu);
+        
+        System.out.println("Ingrediente selecionado: " + menu);
         
         switch (menu) {
             case 0: // Açucar
