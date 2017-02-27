@@ -13,7 +13,6 @@ public class MaquinaSucoMacho {
     static int acucarAtual = 0;
     static int aguaAtual = 0;
     static int sucoAtual = 0;
-    static int volumeTotal = acucarAtual + aguaAtual + sucoAtual;
     
     public static void main(String args[]) {
         /*
@@ -39,22 +38,24 @@ public class MaquinaSucoMacho {
             * Controlar o volume do copo
         */
         
-        exibirValoresAtuais();
-        exibirMenuIngredientes();
-        selecionarMenu();
+        while(true) {
+            exibirValoresAtuais();
+            exibirMenuIngredientes();
+            selecionarMenu();
+        }        
         
     }
     
     static String retornarNomeIngrediente(int menu) {
         String retorno = "Ingrediente selecionado: ";
         switch(menu) {
-            case 0:
+            case 1:
                 retorno += "Açucar";
                 break;
-            case 1:
+            case 2:
                 retorno += "Água";
                 break;
-            case 2:
+            case 3:
                 retorno += "Suco";
                 break;
         }
@@ -83,7 +84,7 @@ public class MaquinaSucoMacho {
         adiciona = adicionaRemove.equals("+");
         
         switch (menu) {
-            case 0: // Açucar
+            case 1: // Açucar
                 if (adiciona) {
                     acucarAtual += doseAcucar;
                 } else {
@@ -91,14 +92,14 @@ public class MaquinaSucoMacho {
                 }
                 
                 break;
-            case 1: // Água
+            case 2: // Água
                 if (adiciona) {
                     aguaAtual += doseAgua;
                 } else {
                     aguaAtual -= doseAgua;
                 }
                 break;           
-            case 2: // Suco
+            case 3: // Suco
                 if (adiciona) {
                     sucoAtual += doseSuco;
                 } else {
@@ -119,16 +120,20 @@ public class MaquinaSucoMacho {
         System.out.printf("* AÇUCAR:  %dml             *\n", acucarAtual);
         System.out.printf("* ÁGUA:    %dml             *\n", aguaAtual);
         System.out.printf("* SUCO:    %dml             *\n", sucoAtual);
-        System.out.printf("* TOTAL:   %dml/%dml       *\n", volumeTotal, tamanhoCopo);
+        System.out.printf("* TOTAL:   %dml/%dml       *\n", calcularVolumeTotal(), tamanhoCopo);
     }
     
     static void exibirMenuIngredientes() {
         System.out.println("****************************");
         System.out.println("* SELECIONE O INGREDIENTE  *");
-        System.out.println("* 0 = Açucar               *");
-        System.out.println("* 1 = Água                 *");
-        System.out.println("* 2 = Suco                 *");
+        System.out.println("* 1 = Açucar               *");
+        System.out.println("* 2 = Água                 *");
+        System.out.println("* 3 = Suco                 *");
         System.out.println("****************************");
+    }
+    
+    static int calcularVolumeTotal() {
+        return acucarAtual + aguaAtual + sucoAtual;
     }
     
 }
