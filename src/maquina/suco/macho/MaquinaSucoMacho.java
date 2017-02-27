@@ -45,6 +45,22 @@ public class MaquinaSucoMacho {
         
     }
     
+    static String retornarNomeIngrediente(int menu) {
+        String retorno = "Ingrediente selecionado: ";
+        switch(menu) {
+            case 0:
+                retorno += "Ingrediente selecionado: Açucar";
+                break;
+            case 1:
+                retorno += "Água";
+                break;
+            case 2:
+                retorno += "Suco";
+                break;
+        }
+        return retorno;
+    }
+    
     static void selecionarMenu() {
         Scanner leitor = new Scanner(System.in);
  
@@ -52,8 +68,10 @@ public class MaquinaSucoMacho {
         boolean adiciona = true;
         
         menu = leitor.nextInt();
-
-        System.out.println("Ingrediente selecionado: " + menu);
+        System.out.println(retornarNomeIngrediente(menu));
+        
+        
+        
         
         switch (menu) {
             case 0: // Açucar
