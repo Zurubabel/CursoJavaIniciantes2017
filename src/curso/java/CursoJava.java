@@ -16,17 +16,20 @@ public class CursoJava {
 
     public static void main(String[] args) { 
                 
-        //System.out.println(numero);
-        
-        //somarDoisNumeros(2, 3);
-        
-        int num0 = 10;
-        
-        System.out.println(retornarSomaDoisNumeros(num0, 7));
-        
-        //somarDoisNumeros(10, -30);
+        System.out.println(retornarNomeIngrediente(3));
     }
     
-    
+    static String retornarNomeIngrediente(int menu) {
+        String retorno = "Ingrediente selecionado: ";
+        switch(menu) {
+            case 0:
+                return retorno + " Açucar";
+            case 1:
+                return retorno + "Água";
+            case 2:
+                return retorno + "Suco";
+        }
+        return retorno;
+    }
     
 }
