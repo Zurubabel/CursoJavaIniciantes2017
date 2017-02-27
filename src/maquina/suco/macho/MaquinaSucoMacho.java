@@ -4,6 +4,17 @@ import java.util.Scanner;
 
 public class MaquinaSucoMacho {
     
+    static int tamanhoCopo = 500;
+    static int doseAcucar = 5;
+    static int doseAgua = 50;
+    static int doseSuco = 10;
+
+    // Valor atual
+    static int acucarAtual = 0;
+    static int aguaAtual = 0;
+    static int sucoAtual = 0;
+    static int volumeTotal = acucarAtual + aguaAtual + sucoAtual;
+    
     public static void main(String args[]) {
         /*
             Máquina de Suco de Macho
@@ -28,37 +39,20 @@ public class MaquinaSucoMacho {
             * Controlar o volume do copo
         */
         
+        exibirValoresAtuais();
+        exibirMenuIngredientes();
+        selecionarMenu();
+        
+    }
+    
+    static void selecionarMenu() {
         Scanner leitor = new Scanner(System.in);
-        
-        int tamanhoCopo = 500;
-        int doseAcucar = 5;
-        int doseAgua = 50;
-        int doseSuco = 10;
-        
-        // Valor atual
-        int acucarAtual = 0;
-        int aguaAtual = 0;
-        int sucoAtual = 0;
-        int volumeTotal = acucarAtual + aguaAtual + sucoAtual;
-        
+ 
         int menu = 0;
         boolean adiciona = true;
         
-        System.out.println("****************************");
-        System.out.println("* MÁQUINA DE SUCO DE MACHO *");
-        System.out.println("****************************");
-        System.out.println("*     QUANTIDADE ATUAL     *");
-        System.out.println("****************************");
-        System.out.printf("* AÇUCAR:  %dml             *\n", acucarAtual);
-        System.out.printf("* ÁGUA:    %dml             *\n", aguaAtual);
-        System.out.printf("* SUCO:    %dml             *\n", sucoAtual);
-        System.out.printf("* TOTAL:   %dml/%dml       *\n", volumeTotal, tamanhoCopo);
-        
-        exibirMenuIngredientes();
-        
         menu = leitor.nextInt();
-        
-        
+
         System.out.println("Ingrediente selecionado: " + menu);
         
         switch (menu) {
@@ -87,6 +81,18 @@ public class MaquinaSucoMacho {
             default:
                 System.out.println("Selecione valor do 0, 1 ou 2");
         }      
+    }
+    
+    static void exibirValoresAtuais() {
+        System.out.println("****************************");
+        System.out.println("* MÁQUINA DE SUCO DE MACHO *");
+        System.out.println("****************************");
+        System.out.println("*     QUANTIDADE ATUAL     *");
+        System.out.println("****************************");
+        System.out.printf("* AÇUCAR:  %dml             *\n", acucarAtual);
+        System.out.printf("* ÁGUA:    %dml             *\n", aguaAtual);
+        System.out.printf("* SUCO:    %dml             *\n", sucoAtual);
+        System.out.printf("* TOTAL:   %dml/%dml       *\n", volumeTotal, tamanhoCopo);
     }
     
     static void exibirMenuIngredientes() {
