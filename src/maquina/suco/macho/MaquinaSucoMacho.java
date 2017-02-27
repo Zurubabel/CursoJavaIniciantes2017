@@ -49,7 +49,7 @@ public class MaquinaSucoMacho {
         String retorno = "Ingrediente selecionado: ";
         switch(menu) {
             case 0:
-                retorno += "Ingrediente selecionado: Açucar";
+                retorno += "Açucar";
                 break;
             case 1:
                 retorno += "Água";
@@ -70,8 +70,17 @@ public class MaquinaSucoMacho {
         menu = leitor.nextInt();
         System.out.println(retornarNomeIngrediente(menu));
         
+        System.out.println("****************************");
+        System.out.println("* MÁQUINA DE SUCO DE MACHO *");
+        System.out.println("****************************");
+        System.out.println("*Digite:                   *");
+        System.out.println("* + (Mais Ingrediente)     *");
+        System.out.println("* - (Mais Ingrediente)     *");
+        System.out.println("****************************");
         
+        String adicionaRemove = leitor.next();
         
+        adiciona = adicionaRemove.equals("+");
         
         switch (menu) {
             case 0: // Açucar
