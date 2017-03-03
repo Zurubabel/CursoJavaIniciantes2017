@@ -10,7 +10,7 @@ public class MaquinaSucoMacho {
     static int doseSuco = 10;
 
     // Valor atual
-    static int acucarAtual = 0;
+    static int acucarAtual = 495;
     static int aguaAtual = 0;
     static int sucoAtual = 0;
     
@@ -66,48 +66,68 @@ public class MaquinaSucoMacho {
         Scanner leitor = new Scanner(System.in);
  
         int menu = 0;
-        boolean adiciona = true;
         
         menu = leitor.nextInt();
         System.out.println(retornarNomeIngrediente(menu));
         
-        System.out.println("****************************");
-        System.out.println("* MÁQUINA DE SUCO DE MACHO *");
-        System.out.println("****************************");
-        System.out.println("*Digite:                   *");
-        System.out.println("* + (Mais Ingrediente)     *");
-        System.out.println("* - (Mais Ingrediente)     *");
-        System.out.println("****************************");
+        // Não exibir o menu
+        if (menu == 1) { // Açucar
+            if (acucarAtual == 0) {
+                acucarAtual += doseAcucar;
+            } else if (calcularVolumeTotal() + doseAcucar > tamanhoCopo) {
+                acucarAtual -= doseAcucar;
+            }
+        } else if (menu == 2) { // Agua
+            if (aguaAtual == 0) {
+                aguaAtual += doseAgua;
+            } else if (calcularVolumeTotal() + doseAgua > tamanhoCopo) {
+                aguaAtual -= doseAgua;
+            }
+            
+        } else if (menu == 3 ) { // Suco
+            if (sucoAtual == 0) {
+                sucoAtual += doseSuco;
+            } else if (calcularVolumeTotal() + doseSuco > tamanhoCopo) {
+                sucoAtual -= doseSuco;
+            }
+        } else {
+            System.out.println("****************************");
+            System.out.println("* MÁQUINA DE SUCO DE MACHO *");
+            System.out.println("****************************");
+            System.out.println("*Digite:                   *");
+            System.out.println("* + (Mais Ingrediente)     *");
+            System.out.println("* - (Mais Ingrediente)     *");
+            System.out.println("****************************");
+
         
-        String adicionaRemove = leitor.next();
-        
-        adiciona = adicionaRemove.equals("+");
-        
-        switch (menu) {
-            case 1: // Açucar
-                if (adiciona) {
-                    acucarAtual += doseAcucar;
-                } else {
-                    acucarAtual -= doseAcucar;
-                }
-                
-                break;
-            case 2: // Água
-                if (adiciona) {
-                    aguaAtual += doseAgua;
-                } else {
-                    aguaAtual -= doseAgua;
-                }
-                break;           
-            case 3: // Suco
-                if (adiciona) {
-                    sucoAtual += doseSuco;
-                } else {
-                    sucoAtual -= doseSuco;
-                }
-                break;
-            default:
-                System.out.println("Selecione valor do 0, 1 ou 2");
+            String adicionaRemove = leitor.next();
+            boolean adiciona = adicionaRemove.equals("+");
+
+            switch (menu) {
+                case 1: // Açucar
+                    if (adiciona) {
+                        acucarAtual += doseAcucar;
+                    } else {
+                        acucarAtual -= doseAcucar;
+                    }
+                    break;
+                case 2: // Água
+                    if (adiciona) {
+                        aguaAtual += doseAgua;
+                    } else {
+                        aguaAtual -= doseAgua;
+                    }
+                    break;           
+                case 3: // Suco
+                    if (adiciona) {
+                        sucoAtual += doseSuco;
+                    } else {
+                        sucoAtual -= doseSuco;
+                    }
+                    break;
+                default:
+                    System.out.println("Selecione valor do 0, 1 ou 2");
+            }
         }      
     }
     
