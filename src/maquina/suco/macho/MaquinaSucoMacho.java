@@ -72,26 +72,26 @@ public class MaquinaSucoMacho {
         
         // Não exibir o menu
         if (menu == 1) { // Açucar
-            if (acucarAtual == 0) {
+            if (acucarAtual == 0 && calcularVolumeTotal() + doseAcucar <= tamanhoCopo) {
                 acucarAtual += doseAcucar;
-            } else if (calcularVolumeTotal() + doseAcucar > tamanhoCopo) {
+            } else if (calcularVolumeTotal() + doseAcucar > tamanhoCopo && acucarAtual > 0) {
                 acucarAtual -= doseAcucar;
             } else {
                 adicionarRemoverIngredienteSelecionado(leitor, menu);
             }
         } else if (menu == 2) { // Agua
-            if (aguaAtual == 0) {
+            if (aguaAtual == 0 && calcularVolumeTotal() + doseAgua <= tamanhoCopo) {
                 aguaAtual += doseAgua;
-            } else if (calcularVolumeTotal() + doseAgua > tamanhoCopo) {
+            } else if (calcularVolumeTotal() + doseAgua > tamanhoCopo && aguaAtual > 0) {
                 aguaAtual -= doseAgua;
             } else {
                 adicionarRemoverIngredienteSelecionado(leitor, menu);
             }
             
         } else if (menu == 3 ) { // Suco
-            if (sucoAtual == 0) {
+            if (sucoAtual == 0 && calcularVolumeTotal() + doseSuco <= tamanhoCopo) {
                 sucoAtual += doseSuco;
-            } else if (calcularVolumeTotal() + doseSuco > tamanhoCopo) {
+            } else if (calcularVolumeTotal() + doseSuco > tamanhoCopo && sucoAtual > 0) {
                 sucoAtual -= doseSuco;
             } else {
                 adicionarRemoverIngredienteSelecionado(leitor, menu);
