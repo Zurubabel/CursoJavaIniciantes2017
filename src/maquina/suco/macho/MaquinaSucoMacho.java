@@ -76,12 +76,16 @@ public class MaquinaSucoMacho {
                 acucarAtual += doseAcucar;
             } else if (calcularVolumeTotal() + doseAcucar > tamanhoCopo) {
                 acucarAtual -= doseAcucar;
+            } else {
+                adicionarRemoverIngredienteSelecionado(leitor, menu);
             }
         } else if (menu == 2) { // Agua
             if (aguaAtual == 0) {
                 aguaAtual += doseAgua;
             } else if (calcularVolumeTotal() + doseAgua > tamanhoCopo) {
                 aguaAtual -= doseAgua;
+            } else {
+                adicionarRemoverIngredienteSelecionado(leitor, menu);
             }
             
         } else if (menu == 3 ) { // Suco
@@ -89,46 +93,50 @@ public class MaquinaSucoMacho {
                 sucoAtual += doseSuco;
             } else if (calcularVolumeTotal() + doseSuco > tamanhoCopo) {
                 sucoAtual -= doseSuco;
+            } else {
+                adicionarRemoverIngredienteSelecionado(leitor, menu);
             }
-        } else {
-            System.out.println("****************************");
-            System.out.println("* MÁQUINA DE SUCO DE MACHO *");
-            System.out.println("****************************");
-            System.out.println("*Digite:                   *");
-            System.out.println("* + (Mais Ingrediente)     *");
-            System.out.println("* - (Mais Ingrediente)     *");
-            System.out.println("****************************");
+        }   
+    }
+    
+    static void adicionarRemoverIngredienteSelecionado(Scanner leitor, int menu) {
+        System.out.println("****************************");
+        System.out.println("* MÁQUINA DE SUCO DE MACHO *");
+        System.out.println("****************************");
+        System.out.println("*Digite:                   *");
+        System.out.println("* + (Mais Ingrediente)     *");
+        System.out.println("* - (Mais Ingrediente)     *");
+        System.out.println("****************************");
 
-        
-            String adicionaRemove = leitor.next();
-            boolean adiciona = adicionaRemove.equals("+");
 
-            switch (menu) {
-                case 1: // Açucar
-                    if (adiciona) {
-                        acucarAtual += doseAcucar;
-                    } else {
-                        acucarAtual -= doseAcucar;
-                    }
-                    break;
-                case 2: // Água
-                    if (adiciona) {
-                        aguaAtual += doseAgua;
-                    } else {
-                        aguaAtual -= doseAgua;
-                    }
-                    break;           
-                case 3: // Suco
-                    if (adiciona) {
-                        sucoAtual += doseSuco;
-                    } else {
-                        sucoAtual -= doseSuco;
-                    }
-                    break;
-                default:
-                    System.out.println("Selecione valor do 0, 1 ou 2");
-            }
-        }      
+        String adicionaRemove = leitor.next();
+        boolean adiciona = adicionaRemove.equals("+");
+
+        switch (menu) {
+            case 1: // Açucar
+                if (adiciona) {
+                    acucarAtual += doseAcucar;
+                } else {
+                    acucarAtual -= doseAcucar;
+                }
+                break;
+            case 2: // Água
+                if (adiciona) {
+                    aguaAtual += doseAgua;
+                } else {
+                    aguaAtual -= doseAgua;
+                }
+                break;           
+            case 3: // Suco
+                if (adiciona) {
+                    sucoAtual += doseSuco;
+                } else {
+                    sucoAtual -= doseSuco;
+                }
+                break;
+            default:
+                System.out.println("Selecione valor do 0, 1 ou 2");
+        }
     }
     
     static void exibirValoresAtuais() {
