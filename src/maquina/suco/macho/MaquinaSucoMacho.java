@@ -71,32 +71,34 @@ public class MaquinaSucoMacho {
         System.out.println(retornarNomeIngrediente(menu));
         
         // Não exibir o menu
-        if (menu == 1) { // Açucar
-            if (acucarAtual == 0 && calcularVolumeTotal() + doseAcucar <= tamanhoCopo) {
-                acucarAtual += doseAcucar;
-            } else if (calcularVolumeTotal() + doseAcucar > tamanhoCopo && acucarAtual > 0) {
-                acucarAtual -= doseAcucar;
-            } else {
-                adicionarRemoverIngredienteSelecionado(leitor, menu);
-            }
-        } else if (menu == 2) { // Agua
-            if (aguaAtual == 0 && calcularVolumeTotal() + doseAgua <= tamanhoCopo) {
-                aguaAtual += doseAgua;
-            } else if (calcularVolumeTotal() + doseAgua > tamanhoCopo && aguaAtual > 0) {
-                aguaAtual -= doseAgua;
-            } else {
-                adicionarRemoverIngredienteSelecionado(leitor, menu);
-            }
-            
-        } else if (menu == 3 ) { // Suco
-            if (sucoAtual == 0 && calcularVolumeTotal() + doseSuco <= tamanhoCopo) {
-                sucoAtual += doseSuco;
-            } else if (calcularVolumeTotal() + doseSuco > tamanhoCopo && sucoAtual > 0) {
-                sucoAtual -= doseSuco;
-            } else {
-                adicionarRemoverIngredienteSelecionado(leitor, menu);
-            }
-        }   
+        switch (menu) {
+            case 1:
+                // Açucar
+                if (acucarAtual == 0) {
+                    acucarAtual += doseAcucar;
+                } else {
+                    adicionarRemoverIngredienteSelecionado(leitor, menu);
+                }   
+                break;
+            case 2:
+                // Agua
+                if (aguaAtual == 0) {
+                    aguaAtual += doseAgua;
+                } else {
+                    adicionarRemoverIngredienteSelecionado(leitor, menu);
+                }   
+                break;
+            case 3:
+                // Suco
+                if (sucoAtual == 0) {
+                    sucoAtual += doseSuco;   
+                } else {
+                    adicionarRemoverIngredienteSelecionado(leitor, menu);
+                }   
+                break;
+            default:
+                break;
+        }
     }
     
     static void adicionarRemoverIngredienteSelecionado(Scanner leitor, int menu) {
@@ -149,6 +151,9 @@ public class MaquinaSucoMacho {
         System.out.printf("* ÁGUA:    %dml             *\n", aguaAtual);
         System.out.printf("* SUCO:    %dml             *\n", sucoAtual);
         System.out.printf("* TOTAL:   %dml/%dml       *\n", calcularVolumeTotal(), tamanhoCopo);
+        if (calcularVolumeTotal() > tamanhoCopo) {
+            System.out.println("*  !! QUANTIDADE EXCEDIDA !! *");
+        }
     }
     
     static void exibirMenuIngredientes() {
