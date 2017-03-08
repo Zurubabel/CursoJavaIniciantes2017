@@ -1,5 +1,6 @@
 package maquina.suco.macho;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class MaquinaSucoMacho {
@@ -10,9 +11,17 @@ public class MaquinaSucoMacho {
     static int doseSuco = 10;
 
     // Valor atual
-    static int acucarAtual = 495;
+    static int acucarAtual = 0;
     static int aguaAtual = 0;
     static int sucoAtual = 0;
+    
+    // Números aleatórios
+    Random geradorNumero = new Random();
+    
+    // Variáveis dos gostos do Jailson
+    static int gostoAcucar = 0;
+    static int gostoAgua = 0;
+    static int gostoSuco = 0;
     
     public static void main(String args[]) {
         /*
@@ -167,6 +176,10 @@ public class MaquinaSucoMacho {
     
     static int calcularVolumeTotal() {
         return acucarAtual + aguaAtual + sucoAtual;
+    }
+    
+    static void exibirGostosJailson() {
+        
     }
     
 }
