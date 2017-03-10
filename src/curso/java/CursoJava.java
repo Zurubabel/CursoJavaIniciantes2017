@@ -1,16 +1,11 @@
 package curso.java;
 
+import java.util.Random;
+
 public class CursoJava {
     
     public static void main(String[] args) { 
-            
         
-        for(int i = 0; i <= 100; i++) {
-            
-            System.out.println("Número exibido: " + i);
-            
-            
-        }
     }
     
     

@@ -2,19 +2,10 @@ package maquina.suco.macho;
 
 import java.util.Random;
 import java.util.Scanner;
+import maquina.suco.macho.suco.Suco;
 
 public class MaquinaSucoMacho {
-    
-    static int tamanhoCopo = 500;
-    static int doseAcucar = 5;
-    static int doseAgua = 50;
-    static int doseSuco = 10;
-
-    // Valor atual
-    static int acucarAtual = 0;
-    static int aguaAtual = 0;
-    static int sucoAtual = 0;
-    
+       
     // Números aleatórios
     Random geradorNumero = new Random();
     
@@ -46,6 +37,8 @@ public class MaquinaSucoMacho {
             
             * Controlar o volume do copo
         */
+        
+        Suco suco = new Suco();
         
         while(true) {
             exibirValoresAtuais();
