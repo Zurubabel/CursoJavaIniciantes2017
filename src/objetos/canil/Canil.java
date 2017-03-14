@@ -4,7 +4,9 @@ package objetos.canil;
 public class Canil {
     public static void main(String args[]) {
         
-        Cachorro tobias = new Cachorro();
+        Pudo tobias = new Pudo();
+        tobias.forca = 35.9;
+        tobias.comprimento = 70.0;
         
         Cachorro florencio = new Cachorro("Florêncio");
         florencio.comprimento = 50.5;
