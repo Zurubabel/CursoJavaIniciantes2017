@@ -11,15 +11,16 @@ public class Street {
     public static void main(String args[]) {
         
         Ryu ryu = new Ryu();
+        ryu.pular();
         
         ryu.meiaLuaChute();
+        ryu.meiaLuaSoco();
         
         Guile guile = new Guile();
+        guile.pular();
         
         guile.meiaLuaSoco();
-        
-        Personagem personagem = new Personagem();
-        
+                
     }
     
 }

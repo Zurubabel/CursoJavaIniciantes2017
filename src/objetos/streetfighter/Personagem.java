@@ -1,21 +1,17 @@
 package objetos.streetfighter;
 
-public class Personagem {
+public abstract class Personagem {
     
     String nome;
     int forca;
     int velocidade;
     
     void pular() {
-        
+        System.out.println(this.nome + " pulou");
     }
     
-    void meiaLuaSoco() {
-        
-    }
+    abstract void meiaLuaSoco();
     
-    void meiaLuaChute() {
-        
-    }
+    abstract void meiaLuaChute();
     
 }
