@@ -2,9 +2,13 @@ package objetos.streetfighter;
 
 public abstract class Personagem {
     
-    String nome;
+    private String nome;
     private int forca;
     private int velocidade;
+    
+    public Personagem(String nome) {
+        this.nome = nome;
+    }
     
     void pular() {
         System.out.println(this.nome + " pulou");

@@ -3,7 +3,7 @@ package objetos.streetfighter;
 public class Ryu extends Personagem {
     
     public Ryu() {
-        this.nome = "Ryu";
+        super("Ryu");
     }
     @Override
     void meiaLuaSoco() {
