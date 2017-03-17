@@ -1,6 +1,8 @@
 
 package objetos.canil;
 
+import objetos.streetfighter.Ryu;
+
 public class Canil {
     public static void main(String args[]) {
         
@@ -21,6 +23,7 @@ public class Canil {
         florencio.correr();
         chiquinho.correr();
         
+        Ryu ryu = new Ryu();
         
     }
 }

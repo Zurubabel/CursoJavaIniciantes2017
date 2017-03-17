@@ -2,7 +2,7 @@ package objetos.streetfighter;
 
 public class Ryu extends Personagem {
     
-    Ryu() {
+    public Ryu() {
         this.nome = "Ryu";
     }
     @Override

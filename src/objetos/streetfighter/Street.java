@@ -13,6 +13,7 @@ public class Street {
         Ryu ryu = new Ryu();
         ryu.pular();
         
+        
         ryu.meiaLuaChute();
         ryu.meiaLuaSoco();
         
