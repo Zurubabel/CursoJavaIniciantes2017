@@ -22,6 +22,10 @@ public class Suco {
         this.aguaAtual = 0;
         this.sucoAtual = 0;
     }
+    
+    public int calcularVolumeTotal() {
+        return this.acucarAtual + this.aguaAtual + this.sucoAtual;
+    }
 
     public int getTamanhoCopo() {
         return tamanhoCopo;
