@@ -14,6 +14,8 @@ public class MaquinaSucoMacho {
     static int gostoAgua = 0;
     static int gostoSuco = 0;
     
+    private Suco suco = new Suco();
+    
     public static void main(String args[]) {
         /*
             Máquina de Suco de Macho
@@ -37,8 +39,6 @@ public class MaquinaSucoMacho {
             
             * Controlar o volume do copo
         */
-        
-        Suco suco = new Suco();
         
         while(true) {
             exibirValoresAtuais();
@@ -76,7 +76,7 @@ public class MaquinaSucoMacho {
         switch (menu) {
             case 1:
                 // Açucar
-                if (acucarAtual == 0) {
+                if (this.suco.getAcucarAtual() == 0) {
                     acucarAtual += doseAcucar;
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);

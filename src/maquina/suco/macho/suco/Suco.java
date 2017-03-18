@@ -2,14 +2,26 @@ package maquina.suco.macho.suco;
 
 
 public class Suco {
-    private int tamanhoCopo = 500;
-    private int doseAcucar = 5;
-    private int doseAgua = 50;
-    private int doseSuco = 10;
     
-    private int acucarAtual = 0;
-    private int aguaAtual = 0;
-    private int sucoAtual = 0;
+    private int tamanhoCopo;
+    private int doseAcucar;
+    private int doseAgua;
+    private int doseSuco;
+    
+    private int acucarAtual;
+    private int aguaAtual;
+    private int sucoAtual;
+    
+    public Suco() {
+        this.tamanhoCopo = 500;
+        this.doseAcucar = 5;
+        this.doseAgua = 50;
+        this.doseSuco = 10;
+        
+        this.acucarAtual = 0;
+        this.aguaAtual = 0;
+        this.sucoAtual = 0;
+    }
 
     public int getTamanhoCopo() {
         return tamanhoCopo;
