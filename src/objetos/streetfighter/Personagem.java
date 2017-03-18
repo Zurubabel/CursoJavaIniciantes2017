@@ -6,12 +6,19 @@ public abstract class Personagem {
     private int forca;
     private int velocidade;
     
+    private static int QT_PERSONAGENS_INSTANCIADOS = 0;
+    
     public Personagem(String nome) {
         this.nome = nome;
+        QT_PERSONAGENS_INSTANCIADOS++;
     }
     
     void pular() {
         System.out.println(this.nome + " pulou");
+    }
+    
+    public int retornarQuantidadeInstanciados() {
+        return QT_PERSONAGENS_INSTANCIADOS;
     }
     
     abstract void meiaLuaSoco();
