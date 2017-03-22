@@ -9,7 +9,7 @@ public class CopoSuco {
     private int sucoAtual;
     
     public CopoSuco() {
-        this.tamanhoCopo = 500;
+        this.tamanhoCopo = 300;
         this.acucarAtual = 0;
         this.aguaAtual = 0;
         this.sucoAtual = 0;
