@@ -1,5 +1,6 @@
 package maquina.suco.macho.maquina;
 
+import maquina.suco.macho.menu.Menu;
 import maquina.suco.macho.suco.CopoSuco;
 
 public class MaquinaSuco {
@@ -7,6 +8,8 @@ public class MaquinaSuco {
     private int doseAcucar;
     private int doseAgua;
     private int doseSuco;
+    
+    private Menu menu;
     
     private CopoSuco copoSuco;
     
@@ -16,9 +19,25 @@ public class MaquinaSuco {
         this.doseSuco = 10;
     }
     
-    public void iniciarProcessoSuco() {
+    public void exibirMenu() {
+        this.menu.exibirMenuIngredientes();
+    }
+        
+    public void iniciarSistemaMaquina() {
+        iniciarCopoSuco();
+        iniciarMenu();
+    }
+    
+    
+    private void iniciarCopoSuco() {
         if (copoSuco == null) {
             this.copoSuco = new CopoSuco();
+        }
+    }
+    
+    public void iniciarMenu() {
+        if (this.menu == null) {
+            this.menu = new Menu(this.copoSuco);
         }
     }
 

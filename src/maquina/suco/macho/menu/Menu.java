@@ -11,8 +11,8 @@ public class Menu {
     
     private CopoSuco suco;
     
-    public Menu() {
-        this.suco = new CopoSuco();
+    public Menu(CopoSuco copoSuco) {
+        this.suco = copoSuco;
     }
     
     public void selecionarMenu() {
