@@ -2,7 +2,7 @@ package maquina.suco.macho;
 
 import java.util.Random;
 import java.util.Scanner;
-import maquina.suco.macho.suco.Suco;
+import maquina.suco.macho.suco.CopoSuco;
 
 public class MaquinaSucoMacho {
        
@@ -14,7 +14,7 @@ public class MaquinaSucoMacho {
     static int gostoAgua = 0;
     static int gostoSuco = 0;
     
-    private Suco suco = new Suco();
+    private CopoSuco suco = new CopoSuco();
     
     public static void main(String args[]) {
         /*

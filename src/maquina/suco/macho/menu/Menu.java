@@ -1,14 +1,18 @@
 package maquina.suco.macho.menu;
 
 import java.util.Scanner;
-import maquina.suco.macho.suco.Suco;
+import maquina.suco.macho.suco.CopoSuco;
 
 public class Menu {
     
-    private Suco suco;
+    private static final int MENU_ACUCAR = 1;
+    private static final int MENU_AGUA = 2;
+    private static final int MENU_SUCO = 3;
+    
+    private CopoSuco suco;
     
     public Menu() {
-        this.suco = new Suco();
+        this.suco = new CopoSuco();
     }
     
     public void selecionarMenu() {
@@ -21,25 +25,22 @@ public class Menu {
         
         // Não exibir o menu
         switch (menu) {
-            case 1:
-                // Açucar
+            case MENU_ACUCAR:
                 if (this.suco.getAcucarAtual() == 0) {
                     acucarAtual += doseAcucar;
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
                 }   
                 break;
-            case 2:
-                // Agua
-                if (aguaAtual == 0) {
+            case MENU_AGUA:
+                if (this.suco.getAguaAtual() == 0) {
                     aguaAtual += doseAgua;
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
                 }   
                 break;
-            case 3:
-                // Suco
-                if (sucoAtual == 0) {
+            case MENU_SUCO:
+                if (this.suco.getSucoAtual() == 0) {
                     sucoAtual += doseSuco;   
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
@@ -64,21 +65,21 @@ public class Menu {
         boolean adiciona = adicionaRemove.equals("+");
 
         switch (menu) {
-            case 1: // Açucar
+            case MENU_ACUCAR: 
                 if (adiciona) {
                     acucarAtual += doseAcucar;
                 } else {
                     acucarAtual -= doseAcucar;
                 }
                 break;
-            case 2: // Água
+            case MENU_AGUA: 
                 if (adiciona) {
                     aguaAtual += doseAgua;
                 } else {
                     aguaAtual -= doseAgua;
                 }
                 break;           
-            case 3: // Suco
+            case MENU_SUCO:
                 if (adiciona) {
                     sucoAtual += doseSuco;
                 } else {
@@ -117,13 +118,13 @@ public class Menu {
     private String retornarNomeIngrediente(int menu) {
         String retorno = "Ingrediente selecionado: ";
         switch(menu) {
-            case 1:
+            case MENU_ACUCAR:
                 retorno += "Açucar";
                 break;
-            case 2:
+            case MENU_AGUA:
                 retorno += "Água";
                 break;
-            case 3:
+            case MENU_SUCO:
                 retorno += "Suco";
                 break;
         }

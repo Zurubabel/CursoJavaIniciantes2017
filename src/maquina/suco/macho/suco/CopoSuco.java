@@ -1,23 +1,15 @@
 package maquina.suco.macho.suco;
 
 
-public class Suco {
+public class CopoSuco {
     
     private int tamanhoCopo;
-    private int doseAcucar;
-    private int doseAgua;
-    private int doseSuco;
-    
     private int acucarAtual;
     private int aguaAtual;
     private int sucoAtual;
     
-    public Suco() {
+    public CopoSuco() {
         this.tamanhoCopo = 500;
-        this.doseAcucar = 5;
-        this.doseAgua = 50;
-        this.doseSuco = 10;
-        
         this.acucarAtual = 0;
         this.aguaAtual = 0;
         this.sucoAtual = 0;
@@ -34,31 +26,7 @@ public class Suco {
     public void setTamanhoCopo(int tamanhoCopo) {
         this.tamanhoCopo = tamanhoCopo;
     }
-
-    public int getDoseAcucar() {
-        return doseAcucar;
-    }
-
-    public void setDoseAcucar(int doseAcucar) {
-        this.doseAcucar = doseAcucar;
-    }
-
-    public int getDoseAgua() {
-        return doseAgua;
-    }
-
-    public void setDoseAgua(int doseAgua) {
-        this.doseAgua = doseAgua;
-    }
-
-    public int getDoseSuco() {
-        return doseSuco;
-    }
-
-    public void setDoseSuco(int doseSuco) {
-        this.doseSuco = doseSuco;
-    }
-
+    
     public int getAcucarAtual() {
         return acucarAtual;
     }
