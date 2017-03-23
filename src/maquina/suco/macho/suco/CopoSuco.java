@@ -3,6 +3,10 @@ package maquina.suco.macho.suco;
 
 public class CopoSuco {
     
+    public static final int ACUCAR = 1;
+    public static final int AGUA = 2;
+    public static final int SUCO = 3;
+    
     private int tamanhoCopo;
     private int acucarAtual;
     private int aguaAtual;
@@ -15,31 +19,20 @@ public class CopoSuco {
         this.sucoAtual = 0;
     }
     // Adicionar Dose
-    public void adicionarDoseAcucar(int dose) {
-        this.acucarAtual += dose;
+    public void dosarIngrediente(int ingrediente, int dose) {
+        switch(ingrediente) {
+            case ACUCAR:
+                this.acucarAtual += dose;
+                break;
+            case AGUA:
+                this.aguaAtual += dose;
+                break;
+            case SUCO:
+                this.sucoAtual += dose;
+                break;
+        }
     }
-    
-    public void adicionarDoseAgua(int dose) {
-        this.aguaAtual += dose;
-    }
-    
-    public void adicionarDoseSuco(int dose) {
-        this.sucoAtual += dose;
-    }
-    // Remover dose
-    public void removerDoseAcucar(int dose) {
-        this.acucarAtual -= dose;
-    }
-    
-    public void removerDoseAgua(int dose) {
-        this.aguaAtual -= dose;
-    }
-    
-    public void removerDoseSuco(int dose) {
-        this.sucoAtual -= dose;
-    }
-    
-    
+       
     public int calcularVolumeTotal() {
         return this.acucarAtual + this.aguaAtual + this.sucoAtual;
     }

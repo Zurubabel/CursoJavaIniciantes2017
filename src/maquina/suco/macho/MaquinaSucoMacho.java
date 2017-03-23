@@ -40,9 +40,13 @@ public class MaquinaSucoMacho {
             * Controlar o volume do copo
         */
         
-        while(true) {
-            
-        }        
+        int qt = -4;
+        int i = 10;
+        
+        i += qt;
+        
+        System.out.println(i);
+        
         
     }
         

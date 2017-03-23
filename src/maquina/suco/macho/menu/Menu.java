@@ -27,7 +27,7 @@ public class Menu {
         switch (menu) {
             case MENU_ACUCAR:
                 if (this.copoSuco.getAcucarAtual() == 0) {
-                    this.getCopoSuco().adicionarDoseAcucar(doseAcucar);
+                    this.getCopoSuco().dosarIngrediente(CopoSuco.ACUCAR, -doseAcucar);
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
                 }   
