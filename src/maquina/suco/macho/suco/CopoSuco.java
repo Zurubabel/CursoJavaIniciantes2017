@@ -14,6 +14,31 @@ public class CopoSuco {
         this.aguaAtual = 0;
         this.sucoAtual = 0;
     }
+    // Adicionar Dose
+    public void adicionarDoseAcucar(int dose) {
+        this.acucarAtual += dose;
+    }
+    
+    public void adicionarDoseAgua(int dose) {
+        this.aguaAtual += dose;
+    }
+    
+    public void adicionarDoseSuco(int dose) {
+        this.sucoAtual += dose;
+    }
+    // Remover dose
+    public void removerDoseAcucar(int dose) {
+        this.acucarAtual -= dose;
+    }
+    
+    public void removerDoseAgua(int dose) {
+        this.aguaAtual -= dose;
+    }
+    
+    public void removerDoseSuco(int dose) {
+        this.sucoAtual -= dose;
+    }
+    
     
     public int calcularVolumeTotal() {
         return this.acucarAtual + this.aguaAtual + this.sucoAtual;

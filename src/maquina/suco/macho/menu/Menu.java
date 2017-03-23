@@ -9,10 +9,10 @@ public class Menu {
     private static final int MENU_AGUA = 2;
     private static final int MENU_SUCO = 3;
     
-    private CopoSuco suco;
+    private CopoSuco copoSuco;
     
     public Menu(CopoSuco copoSuco) {
-        this.suco = copoSuco;
+        this.copoSuco = copoSuco;
     }
     
     public void selecionarMenu() {
@@ -26,21 +26,21 @@ public class Menu {
         // Não exibir o menu
         switch (menu) {
             case MENU_ACUCAR:
-                if (this.suco.getAcucarAtual() == 0) {
-                    acucarAtual += doseAcucar;
+                if (this.copoSuco.getAcucarAtual() == 0) {
+                    this.getCopoSuco().adicionarDoseAcucar(doseAcucar);
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
                 }   
                 break;
             case MENU_AGUA:
-                if (this.suco.getAguaAtual() == 0) {
+                if (this.copoSuco.getAguaAtual() == 0) {
                     aguaAtual += doseAgua;
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
                 }   
                 break;
             case MENU_SUCO:
-                if (this.suco.getSucoAtual() == 0) {
+                if (this.copoSuco.getSucoAtual() == 0) {
                     sucoAtual += doseSuco;   
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
@@ -131,4 +131,7 @@ public class Menu {
         return retorno;
     }
     
+    public CopoSuco getCopoSuco() {
+        return this.copoSuco;
+    }
 }
