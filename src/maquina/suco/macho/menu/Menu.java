@@ -1,6 +1,7 @@
 package maquina.suco.macho.menu;
 
 import java.util.Scanner;
+import maquina.suco.macho.maquina.MaquinaSuco;
 import maquina.suco.macho.suco.CopoSuco;
 
 public class Menu {
@@ -11,8 +12,15 @@ public class Menu {
     
     private CopoSuco copoSuco;
     
-    public Menu(CopoSuco copoSuco) {
+    private MaquinaSuco maquinaSuco;
+
+    public MaquinaSuco getMaquinaSuco() {
+        return maquinaSuco;
+    }
+    
+    public Menu(CopoSuco copoSuco, MaquinaSuco maquinaSuco) {
         this.copoSuco = copoSuco;
+        this.maquinaSuco = maquinaSuco;
     }
     
     public void selecionarMenu() {
@@ -27,21 +35,21 @@ public class Menu {
         switch (menu) {
             case MENU_ACUCAR:
                 if (this.copoSuco.getAcucarAtual() == 0) {
-                    this.getCopoSuco().dosarIngrediente(CopoSuco.ACUCAR, -doseAcucar);
+                    this.getCopoSuco().dosarIngrediente(CopoSuco.ACUCAR, -getMaquinaSuco().getDoseAcucar());
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
                 }   
                 break;
             case MENU_AGUA:
                 if (this.copoSuco.getAguaAtual() == 0) {
-                    aguaAtual += doseAgua;
+                    this.getCopoSuco().dosarIngrediente(CopoSuco.AGUA,  getMaquinaSuco().getDoseAgua());
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
                 }   
                 break;
             case MENU_SUCO:
                 if (this.copoSuco.getSucoAtual() == 0) {
-                    sucoAtual += doseSuco;   
+                    this.getCopoSuco().dosarIngrediente(CopoSuco.SUCO, getMaquinaSuco().getDoseSuco());   
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
                 }   
