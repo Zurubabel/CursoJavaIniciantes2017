@@ -18,7 +18,7 @@ public class MaquinaSuco {
         this.doseAgua = 50;
         this.doseSuco = 10;
         iniciarCopoSuco();
-        this.menu = new Menu(copoSuco, this);
+        iniciarMenu();
     }
     
     public void exibirMenu() {
@@ -39,7 +39,7 @@ public class MaquinaSuco {
     
     public void iniciarMenu() {
         if (this.menu == null) {
-            this.menu = new Menu(this.copoSuco);
+            this.menu = new Menu(this.copoSuco, this);
         }
     }
 
