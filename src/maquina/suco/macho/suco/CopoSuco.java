@@ -22,13 +22,26 @@ public class CopoSuco {
     public void dosarIngrediente(int ingrediente, int dose) {
         switch(ingrediente) {
             case ACUCAR:
-                this.acucarAtual += dose;
+                if (this.acucarAtual + dose < 0) {
+                    this.acucarAtual = 0;
+                } else {
+                    this.acucarAtual += dose;
+                }
                 break;
             case AGUA:
-                this.aguaAtual += dose;
+                if (this.aguaAtual + dose < 0) {
+                    this.aguaAtual = 0;
+                } else {
+                    this.aguaAtual += dose;
+                }
+                
                 break;
             case SUCO:
-                this.sucoAtual += dose;
+                if (this.sucoAtual + dose < 0) {
+                    this.sucoAtual = 0;
+                } else {
+                    this.sucoAtual += dose;
+                }
                 break;
         }
     }
