@@ -143,7 +143,5 @@ public class Menu {
         return this.copoSuco;
     }
 
-    void funcionalidadePrincipal() {
-        
-    }
+    
 }
