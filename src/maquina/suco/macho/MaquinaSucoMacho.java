@@ -1,7 +1,8 @@
 package maquina.suco.macho;
 
 import java.util.Random;
-import java.util.Scanner;
+import maquina.suco.macho.maquina.MaquinaSuco;
+import maquina.suco.macho.menu.Menu;
 import maquina.suco.macho.suco.CopoSuco;
 
 public class MaquinaSucoMacho {
@@ -39,15 +40,14 @@ public class MaquinaSucoMacho {
             
             * Controlar o volume do copo
         */
+        Menu menu = new Menu(new CopoSuco(), new MaquinaSuco());
         
-        int qt = -4;
-        int i = 10;
-        
-        i += qt;
-        
-        System.out.println(i);
-        
-        
+        while(true) {
+            menu.exibirValoresAtuais();
+            menu.exibirMenuIngredientes();
+            menu.selecionarMenu();
+        }
+                
     }
         
 }

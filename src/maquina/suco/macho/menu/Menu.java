@@ -35,7 +35,7 @@ public class Menu {
         switch (menu) {
             case MENU_ACUCAR:
                 if (this.copoSuco.getAcucarAtual() == 0) {
-                    this.getCopoSuco().dosarIngrediente(CopoSuco.ACUCAR, -getMaquinaSuco().getDoseAcucar());
+                    this.getCopoSuco().dosarIngrediente(CopoSuco.ACUCAR, getMaquinaSuco().getDoseAcucar());
                 } else {
                     adicionarRemoverIngredienteSelecionado(leitor, menu);
                 }   
@@ -75,23 +75,23 @@ public class Menu {
         switch (menu) {
             case MENU_ACUCAR: 
                 if (adiciona) {
-                    acucarAtual += doseAcucar;
+                    this.copoSuco.dosarIngrediente(CopoSuco.ACUCAR, this.maquinaSuco.getDoseAcucar());
                 } else {
-                    acucarAtual -= doseAcucar;
+                    this.copoSuco.dosarIngrediente(CopoSuco.ACUCAR, this.maquinaSuco.getDoseAcucar() * -1);
                 }
                 break;
             case MENU_AGUA: 
                 if (adiciona) {
-                    aguaAtual += doseAgua;
+                    this.copoSuco.dosarIngrediente(CopoSuco.AGUA, this.maquinaSuco.getDoseAgua());
                 } else {
-                    aguaAtual -= doseAgua;
+                    this.copoSuco.dosarIngrediente(CopoSuco.AGUA, this.maquinaSuco.getDoseAgua() * -1);
                 }
                 break;           
             case MENU_SUCO:
                 if (adiciona) {
-                    sucoAtual += doseSuco;
+                    this.copoSuco.dosarIngrediente(CopoSuco.SUCO, this.maquinaSuco.getDoseSuco());
                 } else {
-                    sucoAtual -= doseSuco;
+                    this.copoSuco.dosarIngrediente(CopoSuco.SUCO, this.maquinaSuco.getDoseSuco() * -1);
                 }
                 break;
             default:
@@ -105,11 +105,11 @@ public class Menu {
         System.out.println("****************************");
         System.out.println("*     QUANTIDADE ATUAL     *");
         System.out.println("****************************");
-        System.out.printf("* AÇUCAR:  %dml             *\n", acucarAtual);
-        System.out.printf("* ÁGUA:    %dml             *\n", aguaAtual);
-        System.out.printf("* SUCO:    %dml             *\n", sucoAtual);
-        System.out.printf("* TOTAL:   %dml/%dml       *\n", calcularVolumeTotal(), tamanhoCopo);
-        if (calcularVolumeTotal() > tamanhoCopo) {
+        System.out.printf("* AÇUCAR:  %dml             *\n", this.copoSuco.getAcucarAtual());
+        System.out.printf("* ÁGUA:    %dml             *\n", this.copoSuco.getAguaAtual());
+        System.out.printf("* SUCO:    %dml             *\n", this.copoSuco.getSucoAtual());
+        System.out.printf("* TOTAL:   %dml/%dml       *\n", this.copoSuco.calcularVolumeTotal(), this.copoSuco.getTamanhoCopo());
+        if (this.copoSuco.calcularVolumeTotal() > this.copoSuco.getTamanhoCopo()) {
             System.out.println("*  !! QUANTIDADE EXCEDIDA !! *");
         }
     }
@@ -141,5 +141,9 @@ public class Menu {
     
     public CopoSuco getCopoSuco() {
         return this.copoSuco;
+    }
+
+    void funcionalidadePrincipal() {
+        
     }
 }
